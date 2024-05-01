@@ -67,10 +67,12 @@ python -m pip install -r requirements.txt
 
 OK, if that went fine, you're probably good to go!
 
-## Getting started
-
+## Getting started with custom azure api endpoint
+The config is stored in singleton_client.py file to store api key and azure endpoint url
+The original openai.py file has been modified to make it work azure_openai. Currently this fork will not work with openai api.
 The general syntax is:
-
+python -m garak --model_type openai --model_name your-model-name --probes probe_name
+example python -m garak --model_type openai --model_name openai_test_model --probes dan
 `python3 -m garak <options>`
 
 `garak` needs to know what model to scan, and by default, it'll try all the probes it knows on that model, using the vulnerability detectors recommended by each probe. You can see a list of probes using:
